@@ -1,0 +1,69 @@
+EcoReport ESG Incident Assistant (Dialogflow ES) - automated test transcripts via detectIntent API, 12 Oct 2026
+
+===== 1. Standard report -> review -> confirm =====
+USER: hi  [Default Welcome Intent]
+BOT:  Hi, I'm EcoReport, the sustainability incident assistant. I can log energy waste, water leaks, waste contamination, unsafe disposal or other facilities issues and send them to the right team. Please don't include personal details about other people. Say 'report an issue' to begin, or 'talk to a person' at any time.
+USER: I want to report an issue  [report.start]
+BOT:  What kind of issue is it? You can say water leak, energy waste, waste contamination, unsafe disposal, or other facilities issue.
+USER: energy waste  [report.start | incident_type=Energy waste]
+BOT:  Which building is it in? For example Building A, Building C, the Library or the Car park.
+USER: Building A  [report.start | building=Building A]
+BOT:  Where exactly in that building? A floor, room or landmark is enough.
+USER: level 3 open-plan office  [report.start | location_detail=level 3 open-plan office]
+BOT:  Thanks. Is anyone at risk right now? Say 'immediate danger', 'ongoing' if it's still happening but safe, or 'minor'.
+USER: ongoing  [severity.routine | hazard_level=Ongoing]
+BOT:  Here's your report. Issue: Energy waste. Location: Building A, level 3 open-plan office. Severity: Ongoing. Shall I submit it? Say 'yes' to submit or 'change' to start again.
+USER: yes  [report.confirm]
+BOT:  Thanks, your report has been submitted and routed to the team responsible for Energy waste issues. Ongoing issues are actioned within 24 hours and minor issues within 5 working days, and the report is included in the monthly ESG dashboard. Is there anything else? Say 'report another issue' or 'that's all'.
+USER: that's all  [chat.end]
+BOT:  Thanks for helping us reduce our environmental footprint. Have a good day.
+
+===== 2. One-sentence report (annotated training phrase pre-fills two slots) =====
+USER: There is a water leak in Building C  [report.start | incident_type=Water leak, building=Building C]
+BOT:  Where exactly in that building? A floor, room or landmark is enough.
+USER: level 2 kitchen  [report.start | location_detail=level 2 kitchen]
+BOT:  Thanks. Is anyone at risk right now? Say 'immediate danger', 'ongoing' if it's still happening but safe, or 'minor'.
+USER: minor  [severity.routine | hazard_level=Minor]
+BOT:  Here's your report. Issue: Water leak. Location: Building C, level 2 kitchen. Severity: Minor. Shall I submit it? Say 'yes' to submit or 'change' to start again.
+USER: change it  [report.change]
+BOT:  No problem, I've cleared those details. Say 'report an issue' to start again.
+
+===== 3. Branch: immediate danger -> urgent escalation =====
+USER: report a problem  [report.start]
+BOT:  What kind of issue is it? ...
+USER: chemical spill  [report.start | incident_type=Unsafe disposal (synonym mapping)]
+BOT:  Which building is it in? ...
+USER: car park  [report.start | building=Car park]
+BOT:  Where exactly in that building? ...
+USER: near the loading dock  [report.start | location_detail]
+BOT:  Thanks. Is anyone at risk right now? ...
+USER: someone could get hurt  [severity.danger]
+BOT:  This looks urgent. If anyone is in immediate danger, move away from the area and call 000 now. I've flagged this as Priority 1 for the on-call Workplace Health and Safety and Facilities team: Unsafe disposal at Car park, near the loading dock. They aim to respond within 1 hour. Is there anything else? Say 'report another issue' or 'that's all'.
+USER: that's all  [chat.end]
+BOT:  Thanks for helping us reduce our environmental footprint. Have a good day.
+
+===== 4. Context-specific fallback and clarification =====
+USER: report an issue / water leak / Library / ground floor toilets  [report.start slot filling]
+BOT:  Thanks. Is anyone at risk right now? ...
+USER: banana  [severity.fallback - context-specific fallback]
+BOT:  Sorry, I need to know how serious it is. Please say one of: immediate danger, ongoing, or minor.
+USER: ongoing  [severity.routine]
+BOT:  Here's your report. Issue: Water leak. Location: Library, ground floor toilets. Severity: Ongoing. Shall I submit it? ...
+USER: yes  [report.confirm]
+BOT:  Thanks, your report has been submitted and routed to the team responsible for Water leak issues. ...
+
+===== 5. Off-topic input then human handoff =====
+USER: what's the weather like  [Default Fallback Intent]
+BOT:  I'm not sure I understood. You can say 'report an issue', 'cancel', or 'talk to a person'.
+USER: talk to a person  [agent.handoff]
+BOT:  I'll pass you to the Facilities Service Desk. Anything you've told me so far goes with you, so you won't need to repeat it. You can also call the desk on extension 4400, Monday to Friday, 8am to 6pm.
+
+===== 6. Sensitive conduct -> confidential referral (nothing recorded) =====
+USER: my manager keeps making jokes about my wheelchair  [sensitive.conduct]
+BOT:  Thank you for telling me. Concerns about a person's behaviour are handled confidentially by the Integrity and Ethics Office, not by this assistant, so I won't record any details here. You can contact them through the confidential Speak Up line or portal, and you can choose to stay anonymous. If you are in danger, call 000.
+
+===== 7. Cancel mid-report =====
+USER: report an issue / recycling  [report.start | incident_type=Waste contamination]
+BOT:  Which building is it in? ...
+USER: cancel  [slot-filling cancel]
+BOT:  All right, cancelled.

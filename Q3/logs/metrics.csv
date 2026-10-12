@@ -1,0 +1,5 @@
+method,category_acc,urgency_acc,sentiment_acc,followup_acc,under_triage
+HF zero-shot,0.91,0.18,0.64,0.91,7
+LLM original,0.0,0.45,0.73,1.0,2
+LLM revised,0.45,0.45,0.73,1.0,1
+Rule-based,0.91,0.91,0.36,1.0,1

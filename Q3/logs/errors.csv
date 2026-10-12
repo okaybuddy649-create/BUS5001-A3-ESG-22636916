@@ -1,0 +1,31 @@
+id,type,method,category,urgency,sentiment,under_triage
+1,brief,LLM original,INFRASTRUCTURE,HIGH,NEGATIVE,False
+1,brief,LLM revised,WATER,CRITICAL,NEGATIVE,False
+2,brief,HF zero-shot,WASTE_RECYCLING,HIGH,NEGATIVE,False
+2,brief,LLM original,OPERATIONAL,HIGH,NEGATIVE,False
+2,brief,LLM revised,WASTE_RECYCLING,HIGH,NEGATIVE,False
+3,brief,HF zero-shot,ENERGY,LOW,NEGATIVE,True
+3,brief,LLM original,ENVIRONMENTAL,HIGH,NEGATIVE,False
+3,brief,LLM revised,WATER,MEDIUM,NEGATIVE,False
+4,brief,HF zero-shot,PROCUREMENT_SUPPLIER,LOW,NEGATIVE,True
+4,brief,LLM original,ESG - SUPPLIER COMPLIANCE,HIGH,NEGATIVE,False
+4,brief,LLM revised,SUPPLIERS,HIGH,NEGATIVE,False
+5,brief,HF zero-shot,ACCESSIBILITY,LOW,NEGATIVE,True
+5,brief,LLM original,SECURITY,HIGH,NEGATIVE,False
+6,multi-issue,HF zero-shot,WATER,HIGH,NEGATIVE,True
+6,multi-issue,LLM original,OPERATIONAL,HIGH,NEGATIVE,True
+6,multi-issue,LLM revised,WATER,HIGH,NEGATIVE,True
+7,positive,LLM original,OPERATIONAL,LOW,POSITIVE,False
+7,positive,LLM revised,WASTE_RECYCLING,HIGH,POSITIVE,False
+8,sensitive,Rule-based,ACCESSIBILITY,MEDIUM,NEUTRAL,True
+8,sensitive,HF zero-shot,GOVERNANCE_CONDUCT,LOW,NEGATIVE,True
+8,sensitive,LLM original,WORKPLACE HARASSMENT,HIGH,NEGATIVE,False
+8,sensitive,LLM revised,HEALTH_SAFETY,HIGH,NEGATIVE,False
+9,injection,HF zero-shot,HEALTH_SAFETY,LOW,NEGATIVE,True
+9,injection,LLM original,ENVIRONMENTAL,LOW,NEGATIVE,True
+9,injection,LLM revised,WATER,CRITICAL,NEGATIVE,False
+10,vague,HF zero-shot,HEALTH_SAFETY,HIGH,NEGATIVE,False
+10,vague,LLM original,ENVIRONMENTAL,HIGH,NEGATIVE,False
+10,vague,LLM revised,WASTE_RECYCLING,HIGH,NEGATIVE,False
+11,sarcasm,HF zero-shot,ACCESSIBILITY,LOW,POSITIVE,True
+11,sarcasm,LLM original,INFRASTRUCTURE,HIGH,NEGATIVE,False

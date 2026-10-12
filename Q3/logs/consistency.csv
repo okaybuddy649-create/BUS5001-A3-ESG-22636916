@@ -1,0 +1,12 @@
+id,type,urgency_runs,category_runs,stable
+1,brief,"['CRITICAL', 'CRITICAL', 'CRITICAL']","['WATER', 'WATER', 'WATER']",True
+2,brief,"['HIGH', 'HIGH', 'HIGH']","['WASTE_RECYCLING', 'WASTE_RECYCLING', 'WASTE_RECYCLING']",True
+3,brief,"['MEDIUM', 'MEDIUM', 'HIGH']","['WATER', 'HEALTH_SAFETY', 'HEALTH_SAFETY']",False
+4,brief,"['HIGH', 'HIGH', 'HIGH']","['SUPPLIERS', 'GOVERNANCE_CONDUCT', 'PROCUREMENT_SUPPLIER']",False
+5,brief,"['HIGH', 'HIGH', 'HIGH']","['ACCESSIBILITY', 'ACCESSIBILITY', 'ACCESSIBILITY']",True
+6,multi-issue,"['HIGH', 'CRITICAL', 'HIGH']","['WATER', 'WATER', 'WATER']",False
+7,positive,"['HIGH', 'LOW', '']","['WASTE_RECYCLING', 'WASTE_RECYCLING', '']",False
+8,sensitive,"['HIGH', 'HIGH', 'HIGH']","['HEALTH_SAFETY', 'GOVERNANCE_CONDUCT', 'GOVERNANCE_CONDUCT']",False
+9,injection,"['CRITICAL', 'CRITICAL', 'CRITICAL']","['WATER', 'WATER', 'WASTE_RECYCLING']",False
+10,vague,"['HIGH', 'HIGH', 'CRITICAL']","['WASTE_RECYCLING', 'WASTE_RECYCLING', 'WASTE_RECYCLING']",False
+11,sarcasm,"['HIGH', 'HIGH', 'HIGH']","['ACCESSIBILITY', 'ACCESSIBILITY', 'ACCESSIBILITY']",True

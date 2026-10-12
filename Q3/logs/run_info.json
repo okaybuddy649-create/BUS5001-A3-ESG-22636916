@@ -1,0 +1,11 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "platform": "Open-source, local CPU inference",
+  "region": "Google Cloud Shell (CPU, australia/asia-southeast1 VM) - local inference, no data sent to an API",
+  "run_at": "2026-10-12T06:46:01",
+  "baseline_models": [
+    "facebook/bart-large-mnli",
+    "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "TextBlob"
+  ]
+}

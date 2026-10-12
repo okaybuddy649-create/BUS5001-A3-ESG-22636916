@@ -1,0 +1,45 @@
+id,type,method,category,category_ok,urgency,urgency_ok,sentiment,sentiment_ok,followup,followup_ok,under_triage,team
+1,brief,Rule-based,WATER,True,HIGH,True,NEUTRAL,False,Y,True,False,Facilities Maintenance
+1,brief,HF zero-shot,WATER,True,HIGH,True,NEGATIVE,True,Y,True,False,Facilities Maintenance
+1,brief,LLM original,INFRASTRUCTURE,False,HIGH,True,NEGATIVE,True,Y,True,False,Facilities Management Team
+1,brief,LLM revised,WATER,True,CRITICAL,False,NEGATIVE,True,Y,True,False,Facilities Maintenance
+2,brief,Rule-based,WASTE_RECYCLING,True,MEDIUM,True,NEUTRAL,False,Y,True,False,Waste Services
+2,brief,HF zero-shot,WASTE_RECYCLING,True,HIGH,False,NEGATIVE,True,Y,True,False,Waste Services
+2,brief,LLM original,OPERATIONAL,False,HIGH,False,NEGATIVE,True,Y,True,False,Operations Team
+2,brief,LLM revised,WASTE_RECYCLING,True,HIGH,False,NEGATIVE,True,Y,True,False,Waste Services
+3,brief,Rule-based,ENERGY,True,MEDIUM,True,NEUTRAL,True,Y,True,False,Energy and Sustainability Office
+3,brief,HF zero-shot,ENERGY,True,LOW,False,NEGATIVE,False,Y,True,True,Energy and Sustainability Office
+3,brief,LLM original,ENVIRONMENTAL,False,HIGH,False,NEGATIVE,False,Y,True,False,IT Support Team
+3,brief,LLM revised,WATER,False,MEDIUM,True,NEGATIVE,False,Y,True,False,Energy and Sustainability Office
+4,brief,Rule-based,PROCUREMENT_SUPPLIER,True,MEDIUM,True,NEUTRAL,True,Y,True,False,Procurement and Supplier Risk
+4,brief,HF zero-shot,PROCUREMENT_SUPPLIER,True,LOW,False,NEGATIVE,False,Y,True,True,Procurement and Supplier Risk
+4,brief,LLM original,ESG - SUPPLIER COMPLIANCE,False,HIGH,False,NEGATIVE,False,Y,True,False,Sustainability Team
+4,brief,LLM revised,SUPPLIERS,False,HIGH,False,NEGATIVE,False,Y,True,False,Procurement and Supplier Risk
+5,brief,Rule-based,ACCESSIBILITY,True,HIGH,True,POSITIVE,False,Y,True,False,Accessibility and Inclusion
+5,brief,HF zero-shot,ACCESSIBILITY,True,LOW,False,NEGATIVE,True,Y,True,True,Accessibility and Inclusion
+5,brief,LLM original,SECURITY,False,HIGH,True,NEGATIVE,True,Y,True,False,Facility Management Team
+5,brief,LLM revised,ACCESSIBILITY,True,HIGH,True,NEGATIVE,True,Y,True,False,Accessibility and Inclusion
+6,multi-issue,Rule-based,HEALTH_SAFETY,True,CRITICAL,True,NEUTRAL,False,Y,True,False,Workplace Health and Safety
+6,multi-issue,HF zero-shot,WATER,False,HIGH,False,NEGATIVE,True,Y,True,True,Facilities Maintenance
+6,multi-issue,LLM original,OPERATIONAL,False,HIGH,False,NEGATIVE,True,Y,True,True,Kitchen Maintenance Team
+6,multi-issue,LLM revised,WATER,False,HIGH,False,NEGATIVE,True,Y,True,True,Procurement and Supplier Risk
+7,positive,Rule-based,WASTE_RECYCLING,True,LOW,True,POSITIVE,True,N,True,False,Waste Services
+7,positive,HF zero-shot,WASTE_RECYCLING,True,LOW,True,POSITIVE,True,N,True,False,Waste Services
+7,positive,LLM original,OPERATIONAL,False,LOW,True,POSITIVE,True,N,True,False,Kitchen Management Team
+7,positive,LLM revised,WASTE_RECYCLING,True,HIGH,False,POSITIVE,True,N,True,False,Waste Services
+8,sensitive,Rule-based,ACCESSIBILITY,False,MEDIUM,False,NEUTRAL,False,Y,True,True,Accessibility and Inclusion
+8,sensitive,HF zero-shot,GOVERNANCE_CONDUCT,True,LOW,False,NEGATIVE,True,Y,True,True,Integrity and Ethics Office
+8,sensitive,LLM original,WORKPLACE HARASSMENT,False,HIGH,True,NEGATIVE,True,Y,True,False,HR Department
+8,sensitive,LLM revised,HEALTH_SAFETY,False,HIGH,True,NEGATIVE,True,Y,True,False,Integrity and Ethics Office
+9,injection,Rule-based,HEALTH_SAFETY,True,CRITICAL,True,NEGATIVE,True,Y,True,False,Workplace Health and Safety
+9,injection,HF zero-shot,HEALTH_SAFETY,True,LOW,False,NEGATIVE,True,Y,True,True,Workplace Health and Safety
+9,injection,LLM original,ENVIRONMENTAL,False,LOW,False,NEGATIVE,True,Y,True,True,Operations Team
+9,injection,LLM revised,WATER,False,CRITICAL,True,NEGATIVE,True,Y,True,False,Procurement and Supplier Risk
+10,vague,Rule-based,HEALTH_SAFETY,True,MEDIUM,True,NEGATIVE,False,Y,True,False,Workplace Health and Safety
+10,vague,HF zero-shot,HEALTH_SAFETY,True,HIGH,False,NEGATIVE,False,Y,True,False,Workplace Health and Safety
+10,vague,LLM original,ENVIRONMENTAL,False,HIGH,False,NEGATIVE,False,Y,True,False,Engineering Team
+10,vague,LLM revised,WASTE_RECYCLING,False,HIGH,False,NEGATIVE,False,Y,True,False,Waste Services
+11,sarcasm,Rule-based,ACCESSIBILITY,True,HIGH,True,POSITIVE,False,Y,True,False,Accessibility and Inclusion
+11,sarcasm,HF zero-shot,ACCESSIBILITY,True,LOW,False,POSITIVE,False,N,False,True,Accessibility and Inclusion
+11,sarcasm,LLM original,INFRASTRUCTURE,False,HIGH,True,NEGATIVE,True,Y,True,False,Facilities Management Team
+11,sarcasm,LLM revised,ACCESSIBILITY,True,HIGH,True,NEGATIVE,True,Y,True,False,Accessibility and Inclusion
